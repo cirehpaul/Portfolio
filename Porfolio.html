@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cire Paul B. Cruz - Portfolio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .navbar {
+      background-color: black;
+      color: #fff;
+    }
+    .navbar-brand {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .jumbotron {
+      background-image: url('WE.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+    .jumbotron h1, .jumbotron p {
+      color: white;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .section {
+      padding: 50px 0;
+    }
+    .card {
+      border: none;
+      transition: transform 0.5s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .smaller-avatar {
+      width: 240px;
+      height: 280px;
+      object-fit: cover;
+    }
+    footer {
+      font-size: 12px;
+      padding: 8px;
+      background-color: #343a40;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">CPBC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#aboutme">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <img src="2x2.png" class="rounded-circle mb-3 smaller-avatar" alt="Profile">
+  <h1 class="display-4 font-weight-bold">Hi, I am Paul</h1>
+  <p class="lead">Computer Science | Software Engineer</p>
+</div>
+
+<section id="aboutme" class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">About Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><strong>Name:</strong> Cire Paul Bernardo Cruz</p>
+        <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
+        <p><strong>Birthdate:</strong> August 23, 2002</p>
+        <p><strong>Age:</strong> 23</p>
+        <p><strong>Address:</strong> Santa Rosa City, Laguna</p>
+        <p><strong>Objective:</strong> To leverage my dedication and strong work ethic in a dynamic role where I can collaborate, communicate effectively, and continuously learn new skills to create impactful solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Skills</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Relevant Skills</h4>
+        <ul>
+          <li>Hardworking and Dedicated</li>
+          <li>Continuous Learner</li>
+          <li>Collaboration & Teamwork</li>
+          <li>Effective Communication</li>
+          <li>Problem Solver & Time Management</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Technical Skills</h4>
+        <p><b>Languages:</b> Java, Python, HTML, C++/C, C#, PHP, Kotlin, SQL</p>
+        <p><b>Frameworks:</b> Android Jetpack, Kotlin, Firebase, Laravel</p>
+        <p><b>UI Design:</b> Bootstrap, JavaScript, CSS, Jetpack Compose</p>
+        <p><b>Microcontroller:</b> Arduino Uno</p>
+        <p><b>Tools:</b> VS Code, NetBeans, Android Studio, SSMS, Visual Studio</p>
+        <p><b>Data Management:</b> MySQL, PostgreSQL, SQLite, T-SQL, SQL Server, ETL, SSIS</p>
+        <p><b>Version Control:</b> Git, GitHub</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Education</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Our Lady of Fatima University (2021–2025)</li>
+      <li class="list-group-item">Saint Benilde International School Inc. (2014–2021)</li>
+      <li class="list-group-item">Jose Rizal Memorial School (2013–2014)</li>
+      <li class="list-group-item">Segundo Esguerra Memorial Elementary School (2007–2013)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience" class="section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Work Experience</h2>
+    <div class="card p-3">
+      <h5>Nexus Technologies Inc – Makati City</h5>
+      <p><strong>Role:</strong> Data Management Intern, APPS Section</p>
+      <p><strong>Contributions:</strong></p>
+      <ul>
+        <li>Assisted in managing SQL Server databases (installation, indexing, tuning).</li>
+        <li>Optimized SQL queries for analytics and reporting.</li>
+        <li>Developed and deployed SSIS ETL workflows.</li>
+        <li>Troubleshooted SQL & SSIS issues in enterprise environments.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Projects & Academic Experience</h2>
+
+      <div class="card p-3 mb-3">
+      <h5>2nd Regional Research Conference – Laguna University</h5>
+      <p>Theme: <i>Theme: "Resilience Through Innovation: Navigating the Future in Education, Entrepreneurship, Engineering, and 
+Digital Technology" </p>
+      <P>Certificate of Participation: Presenter </P>
+    </div>
+  </div>
+</section>
+    <div class="card p-3 mb-3">
+      <h5>Precision Wellness: Investigating the Impact of Data Analytics on Personalized Nutrition and Fitness 
+Strategies (2025)</h5>
+      <I>Designed and developed an offline application that leverages data analytics to create personalized nutrition and fitness strategies. 
+The application processes user-specific data locally to generate tailored wellness plans, ensuring privacy and accessibility without 
+requiring an internet connection. </I>
+    </div>
+    <div class="lol">
+    <h10>TOOLS / TECH USED:</h10>
+    <ul>
+        <li>Kotlin</li>
+        <li>Android Studio</li>
+        <li>Room Persistent Database</li>
+        <li>Jetpack Compose</li>
+        <li>MVVM (Model-View-ViewModel)</li>
+        <li>Figma</li>
+        <li>SQLite</li>
+    </ul>
+</div>
+
+<section id="certifications" class="section bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Certifications</h2>
+    <ul class="list-group">
+      <li class="list-group-item">T.R.U.S.T - "Tackling Risks and Understanding Security in AI Technology (2023)</li>
+      <li class="list-group-item">DICT - Principles of Web Development & HTML (2024)</li>
+      <li class="list-group-item">DICT - Software Engineering Basics (2024)</li>
+      <li class="list-group-item">DICT - Android Studio Application Development (2024)</li>
+      <li class="list-group-item">DICT - Using HTML and CSS to Design a Website (2024) </li>
+      <li class="list-group-item">DICT - Using Android Fragments (2024) </li>
+      <li class="list-group-item"> DICT - Basic Building Blocks of the User Interface (2024)</li>
+      <li class="list-group-item"> DATABASE – DML Statements and SQL Server Administration (2025)  </li>
+      <li class="list-group-item">SQL SERVER 2014: Security Fundamentals (2025)</li>
+  
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact</h2>
+    <ul class="list-group">
+      <li class="list-group-item">📧 Email: cirepaulcruz21@gmail.com</li>
+      <li class="list-group-item">📞 Phone: +63 994-3598-620 / +63 931-9453-079</li>
+      <li class="list-group-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/cpbcruz21" target="_blank">linkedin.com/in/cpbcruz21</a></li>
+      <li class="list-group-item">📱 Facebook: Cire Paul Cruz</li>
+      <li class="list-group-item">📱 Instagram: @paul_cireh</li>
+      <li class="list-group-item">🐙 Github: <a href="https://github.com/cirehpaul" target="_blank">github.com/git/cirehpaul</a></li> 
+    </ul>
+  </div>
+</section>
+
+<footer class="py-2">
+  <div class="container text-center">
+    <a href="#" class="text-light">© 2025 Cire Paul B. Cruz</a>
+  </div>
+</footer>
+</body>
+</html>
