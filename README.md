@@ -1,0 +1,1 @@
+A personal portfolio website showcasing my projects, technical skills, and achievements in software development. This project highlights my experience in building web and mobile applications, working with various programming languages, and delivering real-world solutions.
