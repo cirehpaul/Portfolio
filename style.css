@@ -414,3 +414,30 @@ ul.navbar-nav li a:hover::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.fire-text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  width: 4px;
+  height: 4px;
+  background: #ffdd99;
+  border-radius: 50%;
+  opacity: 0;
+
+  animation: sparks 1.8s infinite ease-out;
+}
+
+@keyframes sparks {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20px) translateY(-40px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+
+
