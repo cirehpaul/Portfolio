@@ -459,6 +459,36 @@ ul.navbar-nav li a:hover::before {
     }
     .download-link:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5) }
 
+.phone-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.phone-mockup {
+  width: 100%;
+  max-width: 340px;  
+  margin: 0 auto;
+  padding: 15px;
+  background: #0a1a24;
+  border-radius: 28px;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.phone-mockup:hover {
+  transform: scale(1.03);
+}
+
+.phone-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .phone-mockup {
+    max-width: 220px;   
+  }
+}
 
 
 
