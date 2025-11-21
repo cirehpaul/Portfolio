@@ -33,28 +33,30 @@
   </div>
 </div>
 
-    <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">CPBC</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#internship-experience">Internship Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#capstone-projects">Capstone Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#other-projects">Other Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <a href="#home" class="logo">CPBC</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#internship">Internship Experience</a></li>
+      <li><a href="#work">Work Experience</a></li>
+      <li><a href="#capstone">Capstone Projects</a></li>
+      <li><a href="#other-projects">Other Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle">
+      <span></span><span></span><span></span>
     </div>
   </nav>
-  
+</header>
+
+  <!-- Hero Section -->
 <section class="hero" id="home">
   <div class="avatar-wrapper">
     <div class="avatar-ring"></div>
@@ -109,6 +111,7 @@
             <p><b>Frameworks:</b> Android Jetpack, Laravel, Firebase , .NET Core / .NET, React Native</p>
             <p><b>UI:</b> Bootstrap, CSS, JS, Jetpack Compose, XML</p>
             <p><b>Microcontroller:</b> Arduino Uno</p>
+            <p><b>Libraries:</b> OpenCV, Retrofit, OkHttp, Gson, Gemini, OpenAI API, UI & Design </p>
             <p><b>Tools:</b> VS Code, NetBeans, Android Studio, SQL Server Management Studio, Visual Studio, Visual Basic</p>
             <p><b>Databases:</b> MySQL, PostgreSQL, SQLite, SQL Server, ETL, SSIS</p>
             <p><b>Version Control:</b> Git, GitHub</p>
@@ -133,8 +136,8 @@
     </div>
   </section>
 
-  <!-- Internship Experience -->
-  <section id="internship-experience" class="section">
+    <!-- Internship Experience -->
+  <section id="internship" class="section">
     <div class="container">
       <h2 class="section-title">Internship Experience</h2>
       <div class="card">
@@ -159,22 +162,50 @@
     </div>
   </section>
 
-  <!-- Capstone Projects -->
-<section id="capstone-projects" class="section">
+    <!-- Work Experience -->
+  <section id="work" class="section">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="card">
+        <h5>A media company based in America </h5>
+        <p>Role: <span style="color:#00d4ff;">Freelance Junior Android Developer  </span></p>
+        <p><span style="color:#00d4ff;"> July 2025 - Present</span></p>
+        <p><i>Assisted in developing and maintaining mobile applications by implementing clean UI components, optimizing app performance, and ensuring smooth navigation across screens. Participated in designing and building features using Kotlin, Jetpack Compose, and MVVM, while integrating APIs and improving overall app stability. </i></p>
+        <div class="row mt-4">
+        <div class="col-md-6">
+          <h5>Tech Used:</h5>
+          <ul>
+         <li>Kotlin</li>
+         <li>Android Studio</li>
+         <li>Jetpack Compose</li>
+         <li>MVVM (Model-View-ViewModel)</li>
+         <li>Retrofit</li>
+         <li>OkHttp</li>
+         <li>Gson</li>
+         <li>OpenAI API</li>
+         <li>Gemini API</li>
+         </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Capstone Projects -->
+<section id="capstone" class="section">
   <div class="container">
     <h2 class="section-title">Capstone Projects</h2>
 
     <!-- Capstone Project -->
     <div class="card p-4 mb-4">
-      <h4 style="color:#00d4ff;">Precision Wellness: Investigating the Impact of Data Analytics on Personalized Nutrition and Fitness Strategies</h4>
+      <h4 style="color:#00d4ff;">
+        Precision Wellness: Investigating the Impact of Data Analytics on Personalized Nutrition and Fitness Strategies
+      </h4>
 
       <p>Presented at the <strong>2nd Regional Research Conference – Laguna University</strong></p>
       <p><i>Theme: "Resilience Through Innovation: Navigating the Future in Education, Entrepreneurship, Engineering, and Digital Technology"</i></p>
       <p>Certification of Participation: <span style="color:#00d4ff;">Presenter</span></p>
 
-      <p>
-        <strong>Role:</strong> <span style="color:#00d4ff;">Lead Android Developer | Principal Investigator</span>
-      </p>
+      <p><strong>Role:</strong> <span style="color:#00d4ff;">Lead Android Developer | Principal Investigator</span></p>
 
       <p><i>
         Designed and developed an offline application that leverages data analytics to create personalized nutrition and fitness strategies. 
@@ -202,75 +233,48 @@
         </div>
       </div>
 
-      <!-- Screenshots -->
-      <div class="container mt-4">
-        <h5 class="text-center mb-4">Screenshots:</h5>
-        <div class="row justify-content-center">
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/F.jpg" alt="Register Form" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/L.jpg" alt="Login Form" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/d.jpg" alt="Dashboard" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/w1.jpg" alt="Workflow 1" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/w2.jpg" alt="Workflow 2" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/m1.jpg" alt="Menu 1" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/m2.jpg" alt="Menu 2" class="img-fluid">
-            </div>
-          </div>
-
-          <div class="col-md-3 col-sm-6 text-center">
-            <div class="phone-mockup m-2">
-              <img src="img/O.jpg" alt="Other" class="img-fluid">
-            </div>
-          </div>
-
+      <!-- Screenshots Grid -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/F.jpg" alt="Register Form" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/L.jpg" alt="Login Form" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/d.jpg" alt="Dashboard" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/w1.jpg" alt="Workflow 1" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/w2.jpg" alt="Workflow 2" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/m1.jpg" alt="Menu 1" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/m2.jpg" alt="Menu 2" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/O.jpg" alt="Other" class="img-fluid phone-img">
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-  <!-- Other Projects -->
+
+<!-- Other Projects -->
 <section id="other-projects" class="section">
   <div class="container">
     <h2 class="section-title">Other Projects</h2>
 
     <!-- Delivery App -->
-    <div class="card p-4">
+    <div class="card p-4 mb-4">
       <h4 style="color:#00d4ff;">Delivery App - "Project Based"</h4>
       <p><i>"A delivery application developed as a project during college, designed to facilitate efficient order placements and deliveries."</i></p>
-      <p>
-        <strong>Role:</strong> <span style="color:#00d4ff;"> Programmer</span>
-      </p>
+      <p><strong>Role:</strong> <span style="color:#00d4ff;">Android Developer</span></p>
 
       <h5>Tech Used:</h5>
       <ul>
@@ -282,98 +286,67 @@
 
       <!-- Delivery App Screenshots -->
       <div class="row justify-content-center">
-        <div class="col-md-3 col-sm-6 text-center">
-          <div class="phone-mockup m-2">
-            <img src="img/log (1).png" alt="Login" class="img-fluid">
-          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/log (1).png" alt="Login" class="img-fluid phone-img">
         </div>
-
-        <div class="col-md-3 col-sm-6 text-center">
-          <div class="phone-mockup m-2">
-            <img src="img/log (2).png" alt="Dashboard" class="img-fluid">
-          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/log (2).png" alt="Dashboard" class="img-fluid phone-img">
         </div>
-
-        <div class="col-md-3 col-sm-6 text-center">
-          <div class="phone-mockup m-2">
-            <img src="img/log (3).png" alt="Workflow 1" class="img-fluid">
-          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/log (3).png" alt="Workflow 1" class="img-fluid phone-img">
         </div>
-
-        <div class="col-md-3 col-sm-6 text-center">
-          <div class="phone-mockup m-2">
-            <img src="img/log (4).png" alt="Workflow 2" class="img-fluid">
-          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/log (4).png" alt="Workflow 2" class="img-fluid phone-img">
         </div>
-
-        <div class="col-md-3 col-sm-6 text-center">
-          <div class="phone-mockup m-2">
-            <img src="img/log (5).png" alt="Menu 1" class="img-fluid">
-          </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/log (5).png" alt="Menu 1" class="img-fluid phone-img">
         </div>
       </div>
     </div>
-    <br>
 
-    <div class="card">
+    <!-- Cognitive Development Game -->
+    <div class="card p-4">
       <h4 style="color:#00d4ff;">Cognitive Development Game - "Commission Based"</h4>
-      <p><i>"A cognitive development game system created during college, developed for a student from NU who requested a complete system build."</i></p> 
-      
-      <p>
-        <strong>Role:</strong> <span style="color:#00d4ff;">Lead Programmer</span>
-      </p>
-      
+      <p><i>"A cognitive development game system created during college, developed for a student from NU who requested a complete system build."</i></p>
+      <p><strong>Role:</strong> <span style="color:#00d4ff;">Lead Programmer</span></p>
+
       <h5>Tech Used:</h5>
       <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>PHP</li>
-  </ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+      </ul>
 
-  <!-- Screenshots Grid -->
-  <div class="row justify-content-center">
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main.png" class="phone-img">
+      <!-- Screenshots Grid -->
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main.png" alt="Main Screen" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main1.png" alt="Screen 1" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main2.png" alt="Screen 2" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main3.png" alt="Screen 3" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main4.png" alt="Screen 4" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main5.png" alt="Screen 5" class="img-fluid phone-img">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
+          <img src="img/main6.png" alt="Screen 6" class="img-fluid phone-img">
+        </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main1.png" class="phone-img">
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main2.png" class="phone-img">
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main3.png" class="phone-img">
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main4.png" class="phone-img">
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main5.png" class="phone-img">
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-      <div class="phone-mockup">
-        <img src="img/main6.png" class="phone-img">
-      </div>
-    </div>
-  </div>
-</div>
-
 
   </div>
 </section>
+
 
 
   <!-- Certifications -->
@@ -396,20 +369,10 @@
           <li>EU AI Act - Fundamentals of Laws on Artificial Intelligence (2025)</li>
           <li>Blockchain as a Service Using AWS (2025)</li>
           <li>Machine Learning in Python Environment (2025)</li>
+          <li> SQL Server for Data Analysis (2025)</li>
+          <li>Fundamental Data Analysis using Power BI (2025)</li>
+          <li>Leveraging AI in Predictive Analytics, Automation, and Data Management (2025)</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="card">
-        <p>📧 Email: <a href="mailto:cirepaulcruz21@gmail.com">cirepaulcruz21@gmail.com</a></p>
-        <p>📞 Phone: +63 994-3598-620</p>
-        <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/cpbcruz21" target="_blank">linkedin.com/in/cpbcruz21</a></p>
-        <p>🐙 GitHub: <a href="https://github.com/cirehpaul" target="_blank">github.com/cirehpaul</a></p>
       </div>
     </div>
   </section>
@@ -419,13 +382,46 @@
     document.getElementById("preloader").classList.add("hidden");
   });
   </script>
-  <!-- Footer -->
-  <footer>
-    © 2025 Cire Paul B. Cruz | Portfolio
-  </footer>
 
-  </body>
-  </html>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>Get in Touch</h3>
+      <p>Have a project or idea? Let's connect!</p>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=cirepaulcruz21@gmail.com" target="_blank" class="contact-btn">Email Me</a>
+    </div>
+
+ <div class="footer-right">
+  <h3>Follow Me</h3>
+
+   <a href="https://wa.me/639943598620" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+           alt="WhatsApp" width="40" height="40">
+    </a>
+    
+    <a href="https://www.linkedin.com/in/cirepaulcruz/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40">
+   
+      <a href="https://github.com/cirehpaul">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40">
+    </a>
+
+    <a href="https://www.facebook.com/cirepaulcruz21/">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" width="40">
+    </a>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Cire Paul B. Cruz | Portfolio</p>
+  </div>
+</footer>
+
+</body>
+</html>
 
 
 
