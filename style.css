@@ -1,439 +1,655 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cire Paul B. Cruz - Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-     <link rel="stylesheet" href="style.css">
-     <script src="script.js"></script>
+    body {
+          font-family: "Poppins", sans-serif;
+          background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+          color: #e9ecef;
+          line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+          font-weight: 600;
+          color: #fff;
+        }
+
+        a { color: #00d4ff; }
+        a:hover { color: #66e0ff; text-decoration: none; }
+
+      .navbar-nav .nav-item {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
+      .navbar-brand {
+        color: #00d4ff !important; 
+        font-weight: 900;
+      }
+
+        .nav-link {
+          color: #fff !important;
+          transition: 0.3s;
+        }
+        .nav-link:hover {
+          color: #00d4ff !important;
+        }
+
+        .hero { 
+          min-height: 100vh; 
+          display: flex; 
+          justify-content: center;
+          align-items: center; 
+          flex-direction: column; 
+          text-align: center; 
+          padding: 2rem; 
+        }
+        
+        .avatar-wrapper {
+          position: relative;
+          width: 180px;
+          height: 180px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .avatar-ring {
+          --size: 180px;
+          --ring: 8px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: var(--size);
+          height: var(--size);
+          padding: var(--ring);
+          border-radius: 50%;
+          background: conic-gradient(from 0deg,
+            #ff004c, #ff7a00, #ffe600, #19ff00, #00ffee, #0066ff, #b300ff, #ff004c);
+          animation: spin 4s linear infinite;
+          filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.6));
+          z-index: 1;
+        }
+
+        .avatar-container {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          width: calc(100% - 16px);
+          height: calc(100% - 16px);
+          border-radius: 50%;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          z-index: 2;
+        }
+
+        .avatar {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+
+        .section { padding: 70px 0; }
+        .section-title {
+          text-align: center;
+          font-size: 2.3rem;
+          margin-bottom: 10px;
+          color: #00d4ff;
+        }
+
+        /* NAVBAR GENERAL */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: rgba(10, 20, 30, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+
+    /* LOGO */
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #00d4ff;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      color: #e8faff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 6px 0;
+      transition: 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links li a:hover {
+      color: #00d4ff;
+      border-bottom: 2px solid #00d4ff;
+    }
+
+    /* MOBILE MENU ICON */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      margin-bottom: 5px;
+      transition: 0.3s;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(10, 20, 30, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-active {
+        display: flex;
+      }
+    }
+
+
+        .card {
+          background: rgba(255,255,255,0.05);
+          border: none;
+          border-radius: 15px;
+          padding: 20px;
+          color: #e9ecef;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        footer {
+          font-size: 14px;
+          padding: 15px;
+          background-color: rgba(0,0,0,0.9);
+          color: #aaa;
+          text-align: center;
+          margin-top: 30px;
+        }
+        footer a { color: #00d4ff; }
+          .phone-mockup {
+          display: inline-block;
+          background: #fff;
+          padding: 15px 10px;
+          border-radius: 25px;   
+          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          max-width: 200px;
+        }
+        .phone-mockup img {
+          border-radius: 15px;  
+        }
+
+          ul.navbar-nav {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  ul.navbar-nav li {
+    position: relative; 
+    display: grid;
+    place-content: center;
+    margin: 0;
+  }
+
+  ul.navbar-nav li a {
+    color: #fff !important;  
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+
+  ul.navbar-nav li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(90deg,
+      #ff004c, #ff7a00, #ffe600, #19ff00,
+      #00ffee, #0066ff, #b300ff, #ff004c);
+    background-size: 200% 100%;
+
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    bottom: 0;
+    left: 0;
+
+    transition: transform 0.4s ease;
+    box-shadow: 0 0 6px rgba(0, 200, 255, 0.6);
+  }
+
+  /* Hover state */
+  ul.navbar-nav li a:hover {
+    color: #00d4ff !important; 
+  }
+
+  ul.navbar-nav li a:hover::before {
+    transform: scaleX(1);
+    animation: rainbow-sweep 1s ease forwards;
+  }
+
+
+  @keyframes rainbow-sweep {
+    from { background-position: 200% 0; }
+    to   { background-position: 0% 0; }
+  }
+
+
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  #preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+  .download-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #8fe0f0;; 
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .download-link .download-icon {
+    font-size: 14px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .download-link:hover {
+    border-bottom: 2px solid #4de73c;
+    color: #05ae54;
+  }
+
+
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f2027;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .loader {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+  }
+
+  .loader-ring {
+    width: 140px;
+    height: 140px;
+    border: 3px solid rgba(0, 212, 255, 0.2);
+    border-top: 3px solid #00d4ff;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 2s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .emoji {
+    font-size: 3rem;
+    animation: bounceEmoji 1.5s ease-in-out infinite;
+  }
+
+  @keyframes bounceEmoji {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .loader-text {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00d4ff, #7f5af0, #ff6f61);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s linear infinite, fadeIn 1.2s ease forwards;
+    opacity: 0;
+    position: relative;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .loader-text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -150%; }
+    60% { left: 150%; }
+    100% { left: 150%; }
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .dots span {
+    width: 10px;
+    height: 10px;
+    background: #00d4ff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 0.3s infinite alternate;
+  }
+
+
+  .dots span:nth-child(1) { animation-delay: 0s; }
+  .dots span:nth-child(2) { animation-delay: 0.1s; }
+  .dots span:nth-child(3) { animation-delay: 0.2s; }
+  .dots span:nth-child(4) { animation-delay: 0.3s; }
+  .dots span:nth-child(5) { animation-delay: 0.4s; }
+  .dots span:nth-child(6) { animation-delay: 0.5s; }
+  .dots span:nth-child(7) { animation-delay: 0.6s; }
+  .dots span:nth-child(8) { animation-delay: 0.7s; }
+
+  @keyframes bounce {
+    from { transform: translateY(0); opacity: 0.6; }
+    to   { transform: translateY(-10px); opacity: 1; }
+  }
+
+
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .loader-ring {
+    width: 160px;   
+    height: 160px;
+    border: 5px solid rgba(0, 212, 255, 0.2);
+    border-top: 5px solid #00d4ff;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 2s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;   
+  }
+
+
+  .emoji {
+    font-size: 5.5rem;   
+    line-height: 1;
+    animation: bounceEmoji 1.5s ease-in-out infinite;
+  }
+
+  @keyframes bounceEmoji {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.05); }
+  }
+
+  .loader-text {
+    font-size: 1.4rem; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    max-width: 500px;
+    margin: 15px auto;
+    text-align: center;
+
+
+    background: linear-gradient(90deg, #00d4ff, #7f5af0, #ff6f61);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   
-  </head>
-  <body>
-
-<div id="preloader">
-  <div class="loader">
-    <div class="loader-ring">
-      <span class="emoji">😎</span>
-    </div>
-    <h1 class="loader-text">Welcome to my Portfolio!</h1>
-    <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Navbar -->
-<header>
-  <nav class="navbar">
-    <a href="#home" class="logo">CPBC</a>
-
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#internship">Internship Experience</a></li>
-      <li><a href="#work">Work Experience</a></li>
-      <li><a href="#capstone">Capstone Projects</a></li>
-      <li><a href="#other-projects">Other Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <div class="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-</header>
-
-  <!-- Hero Section -->
-<section class="hero" id="home">
-  <div class="avatar-wrapper">
-    <div class="avatar-ring"></div>
-    <div class="avatar-container">
-      <img src="img/2x2.png" alt="Profile" class="avatar" id="avatar-img">
-    </div>
-  </div>
-   <h1>Hi, I&rsquo;m <span style="color:#03ff9e;" class="highlight">Paul</span></h1>
-    <p class="lead">Mobile Developer | Software Developer | .Net Developer</p>
-
-    <a class="download-link" href="resume/Cire Paul B. Cruz (Resume).pdf" download>Download My Resume ⬇</a>
-  </section>
+    animation: gradientShift 6s ease infinite, fadeIn 1.5s ease forwards;
+    opacity: 0;
+  }
 
 
+  @keyframes gradientShift {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+  }
 
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="card">
-        <p><strong>Name:</strong> Cire Paul Bernardo Cruz</p>
-        <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
-        <p><strong>Address:</strong> Santa Rosa City, Laguna</p>
-        <p><strong>Objective:</strong> To leverage my dedication and strong work ethic in a dynamic role where I can collaborate, communicate effectively, and continuously learn new skills to create impactful solutions.</p>
-      </div>
-    </div>
-  </section>
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <h4>Relevant Skills:</h4>
-            <ul>
-              <li>Hardworking and Dedicated</li>
-              <li>Continuous Learner</li>
-              <li>Collaboration & Teamwork</li>
-              <li>Effective Communication</li>
-              <li>Problem Solver </li>
-              <li>Time Management</li>
-              <li>Initiative </li>
-              <li>Team Collaborative </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card">
-            <h4>Technical Skills:</h4>
-            <p><b>Languages:</b> Java, Python, HTML, C++/C, C#, PHP, Kotlin, SQL</p>
-            <p><b>Frameworks:</b> Android Jetpack, Laravel, Firebase , .NET Core / .NET, React Native</p>
-            <p><b>UI:</b> Bootstrap, CSS, JS, Jetpack Compose, XML</p>
-            <p><b>Microcontroller:</b> Arduino Uno</p>
-            <p><b>Libraries:</b> OpenCV, Retrofit, OkHttp, Gson, Gemini, OpenAI API, UI & Design </p>
-            <p><b>Tools:</b> VS Code, NetBeans, Android Studio, SQL Server Management Studio, Visual Studio, Visual Basic</p>
-            <p><b>Databases:</b> MySQL, PostgreSQL, SQLite, SQL Server, ETL, SSIS</p>
-            <p><b>Version Control:</b> Git, GitHub</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  .fire-text::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    width: 4px;
+    height: 4px;
+    background: #ffdd99;
+    border-radius: 50%;
+    opacity: 0;
 
-  <!-- Education -->
-  <section id="education" class="section">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="card">
-        <ul>
-          <li>Our Lady of Fatima University - Laguna Campus (2021–2025)</li>
-          <li>Saint Benilde International School Inc. (2014–2021)</li>
-          <li>Jose Rizal Memorial School (2013–2014)</li>
-          <li>Segundo Esguerra Memorial Elementary School (2007–2013)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    animation: sparks 1.8s infinite ease-out;
+  }
 
-    <!-- Internship Experience -->
-  <section id="internship" class="section">
-    <div class="container">
-      <h2 class="section-title">Internship Experience</h2>
-      <div class="card">
-        <h5>Nexus Technologies Inc – Makati City</h5>
-        <p>Role: <span style="color:#00d4ff;">Apps Section, Data Management Intern</span></p>
-        <p><i>Assisted in managing and configuring SQL Server databases, including installation, indexing, performance tuning, and 
-  data querying. Participated in the design, development, and deployment of data integration solutions using SSIS (SQL 
-  Server Integration Services) within Visual Studio to efficiently move, transform, and analyze data across systems. </i></p>
+  @keyframes sparks {
+    0% {
+      transform: translateX(0) translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-20px) translateY(-40px) scale(0.2);
+      opacity: 0;
+    }
+  }
 
-        <div class="row mt-4">
-        <div class="col-md-6">
-          <h5>Tech Used:</h5>
-          <ul>
-          <li>SQL Server Management Studio (SSMS) </li> 
-          <li>SQL Server Configuration Manager </li>
-          <li>SQL Server Integration Services (SSIS) </li> 
-          <li>Visual Studio 2013</li>
-          </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  .hero p.lead{
+        margin: .2rem 0 1rem;
+        color: #cfeff6;
+        font-size: 1.05rem;
+        z-index:6;
+      }
 
-    <!-- Work Experience -->
-  <section id="work" class="section">
-    <div class="container">
-      <h2 class="section-title">Work Experience</h2>
-      <div class="card">
-        <h5>A media company based in America </h5>
-        <p>Role: <span style="color:#00d4ff;">Freelance Junior Android Developer  </span></p>
-        <p><span style="color:#00d4ff;"> July 2025 - Present</span></p>
-        <p><i>Assisted in developing and maintaining mobile applications by implementing clean UI components, optimizing app performance, and ensuring smooth navigation across screens. Participated in designing and building features using Kotlin, Jetpack Compose, and MVVM, while integrating APIs and improving overall app stability. </i></p>
-        <div class="row mt-4">
-        <div class="col-md-6">
-          <h5>Tech Used:</h5>
-          <ul>
-         <li>Kotlin</li>
-         <li>Android Studio</li>
-         <li>Jetpack Compose</li>
-         <li>MVVM (Model-View-ViewModel)</li>
-         <li>Retrofit</li>
-         <li>OkHttp</li>
-         <li>Gson</li>
-         <li>OpenAI API</li>
-         <li>Gemini API</li>
-         </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- Capstone Projects -->
-<section id="capstone" class="section">
-  <div class="container">
-    <h2 class="section-title">Capstone Projects</h2>
+      .download-link{
+        z-index:6;
+        display:inline-block;
+        margin-top: .6rem;
+        color: #9ef0ff;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.04);
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+      .download-link:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5) }
 
-    <!-- Capstone Project -->
-    <div class="card p-4 mb-4">
-      <h4 style="color:#00d4ff;">
-        Precision Wellness: Investigating the Impact of Data Analytics on Personalized Nutrition and Fitness Strategies
-      </h4>
+  .phone-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
-      <p>Presented at the <strong>2nd Regional Research Conference – Laguna University</strong></p>
-      <p><i>Theme: "Resilience Through Innovation: Navigating the Future in Education, Entrepreneurship, Engineering, and Digital Technology"</i></p>
-      <p>Certification of Participation: <span style="color:#00d4ff;">Presenter</span></p>
+  .phone-mockup {
+    width: 100%;
+    max-width: 340px;  
+    margin: 0 auto;
+    padding: 15px;
+    background: #0a1a24;
+    border-radius: 28px;
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.2);
+    transition: transform 0.3s ease;
+  }
 
-      <p><strong>Role:</strong> <span style="color:#00d4ff;">Lead Android Developer | Principal Investigator</span></p>
+  .phone-mockup:hover {
+    transform: scale(1.03);
+  }
 
-      <p><i>
-        Designed and developed an offline application that leverages data analytics to create personalized nutrition and fitness strategies. 
-        The application processes user-specific data locally to generate tailored wellness plans, ensuring privacy and accessibility without requiring an internet connection.
-      </i></p>
-
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <h5>Tech Used:</h5>
-          <ul>
-            <li>Kotlin</li>
-            <li>Android Studio</li>
-            <li>Room DB</li>
-            <li>Jetpack Compose</li>
-            <li>MVVM</li>
-            <li>Figma</li>
-            <li>SQLite</li>
-          </ul>
-
-          <h5>Hardware Used:</h5>
-          <ul>
-            <li>Laptop</li>
-            <li>Cellphone (Android Only)</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Screenshots Grid -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/F.jpg" alt="Register Form" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/L.jpg" alt="Login Form" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/d.jpg" alt="Dashboard" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/w1.jpg" alt="Workflow 1" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/w2.jpg" alt="Workflow 2" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/m1.jpg" alt="Menu 1" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/m2.jpg" alt="Menu 2" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/O.jpg" alt="Other" class="img-fluid phone-img">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  .phone-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  @media (max-width: 768px) {
+    .phone-mockup {
+      max-width: 220px;   
+    }
+  }
 
 
-<!-- Other Projects -->
-<section id="other-projects" class="section">
-  <div class="container">
-    <h2 class="section-title">Other Projects</h2>
+  .footer {
+    width: 100%;
+    background-color: #0d1117;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
 
-    <!-- Delivery App -->
-    <div class="card p-4 mb-4">
-      <h4 style="color:#00d4ff;">Delivery App - "Project Based"</h4>
-      <p><i>"A delivery application developed as a project during college, designed to facilitate efficient order placements and deliveries."</i></p>
-      <p><strong>Role:</strong> <span style="color:#00d4ff;">Android Developer</span></p>
+  .footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; /* left and right columns */
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 
-      <h5>Tech Used:</h5>
-      <ul>
-        <li>Kotlin</li>
-        <li>Android Studio</li>
-        <li>Room DB</li>
-        <li>XML</li>
-      </ul>
+  .footer-left, .footer-right {
+    flex: 1 1 300px;
+  }
 
-      <!-- Delivery App Screenshots -->
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/log (1).png" alt="Login" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/log (2).png" alt="Dashboard" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/log (3).png" alt="Workflow 1" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/log (4).png" alt="Workflow 2" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/log (5).png" alt="Menu 1" class="img-fluid phone-img">
-        </div>
-      </div>
-    </div>
+  .footer-left h3, .footer-right h3 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+  }
 
-    <!-- Cognitive Development Game -->
-    <div class="card p-4">
-      <h4 style="color:#00d4ff;">Cognitive Development Game - "Commission Based"</h4>
-      <p><i>"A cognitive development game system created during college, developed for a student from NU who requested a complete system build."</i></p>
-      <p><strong>Role:</strong> <span style="color:#00d4ff;">Lead Programmer</span></p>
+  .footer-left p {
+    margin-bottom: 1rem;
+  }
 
-      <h5>Tech Used:</h5>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-      </ul>
+  .contact-btn {
+    padding: 0.5rem 1rem;
+    background-color: #00d4ff;
+    color: #0d1117;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
 
-      <!-- Screenshots Grid -->
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main.png" alt="Main Screen" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main1.png" alt="Screen 1" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main2.png" alt="Screen 2" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main3.png" alt="Screen 3" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main4.png" alt="Screen 4" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main5.png" alt="Screen 5" class="img-fluid phone-img">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4 text-center">
-          <img src="img/main6.png" alt="Screen 6" class="img-fluid phone-img">
-        </div>
-      </div>
-    </div>
+  .contact-btn:hover {
+    background-color: #0088cc;
+  }
 
-  </div>
-</section>
+  .social-icons a {
+    margin-right: 0.8rem;
+    display: inline-block;
+    transition: transform 0.3s, opacity 0.3s;
+  }
 
+  .social-icons a img {
+    width: 28px;
+    height: 28px;
+  }
 
+  .social-icons a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 
-  <!-- Certifications -->
-  <section id="certifications" class="section">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="card">
-        <ul>
-          <li>Unlocked: Password @ Authentication (2022)</li>
-          <li>T.R.U.S.T - Tackling Risks and Understanding Security in AI Technology (2023)</li>
-          <li>The cutting edge: Trends Shaping the Future of Computing  (2023)</li>
-          <li>DICT - Principles of Web Development & HTML (2024)</li>
-          <li>DICT - Basic Level of Software Engineering  (2024)</li>
-          <li>DICT - Android Studio Application Development (2024)</li>
-          <li>DICT - Using HTML & CSS to Design a Website (2024)</li>
-          <li>DICT - Using Android Fragments (2024)</li>
-          <li>DICT - UI Building Blocks (2024)</li>
-          <li>DATABASE – DML Statements and SQL Server Administration (2025)</li>
-          <li>SQL Server 2014: Security Fundamentals (2025)</li>
-          <li>EU AI Act - Fundamentals of Laws on Artificial Intelligence (2025)</li>
-          <li>Blockchain as a Service Using AWS (2025)</li>
-          <li>Machine Learning in Python Environment (2025)</li>
-          <li> SQL Server for Data Analysis (2025)</li>
-          <li>Fundamental Data Analysis using Power BI (2025)</li>
-          <li>Leveraging AI in Predictive Analytics, Automation, and Data Management (2025)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
 
-    <script>
-  window.addEventListener("load", () => {
-    document.getElementById("preloader").classList.add("hidden");
-  });
-  </script>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h3>Get in Touch</h3>
-      <p>Have a project or idea? Let's connect!</p>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=cirepaulcruz21@gmail.com" target="_blank" class="contact-btn">Email Me</a>
-    </div>
-
- <div class="footer-right">
-  <h3>Follow Me</h3>
-
-   <a href="https://wa.me/639943598620" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-           alt="WhatsApp" width="40" height="40">
-    </a>
-    
-    <a href="https://www.linkedin.com/in/cirepaulcruz/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40" height="40">
-   
-      <a href="https://github.com/cirehpaul">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" height="40">
-    </a>
-
-    <a href="https://www.facebook.com/cirepaulcruz21/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" width="40">
-    </a>
-  </div>
-</div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 Cire Paul B. Cruz | Portfolio</p>
-  </div>
-</footer>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .social-icons img {
+    margin: 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
 
 
