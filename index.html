@@ -47,7 +47,6 @@
       <li><a href="#capstone">Capstone Projects</a></li>
       <li><a href="#other-projects">Other Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div class="menu-toggle">
@@ -67,7 +66,7 @@
    <h1>Hi, I&rsquo;m <span style="color:#03ff9e;" class="highlight">Paul</span></h1>
     <p class="lead">Mobile Developer | Software Developer | .Net Developer</p>
 
-    <a class="download-link" href="resume/Cire Paul Cruz (Resume).pdf" download>Download My Resume ⬇</a>
+    <a class="download-link" href="resume/Cire Paul B. Cruz (Resume).pdf" download>Download My Resume ⬇</a>
   </section>
 
   <!-- About Me -->
@@ -223,7 +222,7 @@
        <h8><b>PROJECT:</b></h8>
         <p><i>AI Coaching Assistant App</i></p>
         <h8><b>OVERALL CONTRIBUTION:</b></h8>
-
+        
         <p> • Developed and enhanced core functionalities for the company’s AI coaching 
         and assistant application, ensuring clean UI, intuitive navigation, and 
         responsive layouts using Jetpack Compose.</p>
@@ -521,7 +520,15 @@
 
 
 
-    <script>
+ <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
   window.addEventListener("load", () => {
     document.getElementById("preloader").classList.add("hidden");
   });
@@ -566,7 +573,6 @@
 
 </body>
 </html>
-
 
 
 
