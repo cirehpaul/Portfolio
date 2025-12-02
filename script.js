@@ -18,13 +18,15 @@ window.addEventListener("load", function() {
     }
   });
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+  document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('open');
-    });
+  menuToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("active"); // Toggle the 'active' class on the nav-links
+  });
+});
+
 
 });
     
