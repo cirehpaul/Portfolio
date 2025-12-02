@@ -651,5 +651,73 @@
     vertical-align: middle;
     cursor: pointer;
   }
+  /* Basic toggle icon layout */
+  .menu-toggle {
+    cursor: pointer;
+    display: block;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .education-list p {
+  margin: 0;           /* Remove default spacing */
+  line-height: 1.2;    /* Reduce spacing between lines */
+}
+
+.achievement {
+  margin-top: 2px;     /* small gap between date and Dean's Lister */
+  font-style: italic;  /* optional styling */
+}
 
 
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.cert-list .year {
+  width: 60px; 
+  font-weight: bold;
+  color: #f7f5f5;
+  font-size: 0.85rem;
+}
+
+.cert-list .circle {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #f3f0f0;
+  border-radius: 50%;
+  margin: 4px 12px 0 12px;
+  flex-shrink: 0;
+}
+
+.cert-list .cert-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.cert-list .cert-text a {
+  color: #00d4ff;
+  text-decoration: none;
+}
