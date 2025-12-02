@@ -721,3 +721,59 @@
   color: #00d4ff;
   text-decoration: none;
 }
+
+/* Default Desktop Style (unchanged) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hide toggle on desktop */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #060606;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    display: none; /* Hidden until toggle */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #00d4ff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  /* Animation for "X" when active */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
