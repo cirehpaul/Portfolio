@@ -1,0 +1,7 @@
+/node_modules
+/react-portfolio/node_modules
+/dist
+/react-portfolio/dist
+.DS_Store
+.env
+/package-lock.json
