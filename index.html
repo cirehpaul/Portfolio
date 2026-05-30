@@ -1,25 +1,33 @@
-  <!DOCTYPE html>
+﻿  <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cire Paul B. Cruz - Portfolio</title>
+    <meta name="description" content="Portfolio of Cire Paul Bernardo Cruz — Application Support Analyst, Mobile Developer, and Computer Science graduate. Resume, projects, skills, and certifications." />
+    <meta name="theme-color" content="#071026" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-     <link rel="stylesheet" href="style.css">
-     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
   
   </head>
   <body>
+  <a class="skip-link" href="#home" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
 <div id="preloader">
   <div class="loader">
     <div class="loader-ring">
-      <span class="emoji">😎</span>
+      <div class="prelogo" role="img" aria-label="CPBC logo">
+        <img src="img/2x2.png" alt="CPBC logo" class="prelogo-img">
+        <div class="prelogo-text">CPBC</div>
+      </div>
     </div>
     <h1 class="loader-text">Welcome to my Portfolio!</h1>
-    <div class="dots">
+    <div class="dots" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
@@ -28,17 +36,16 @@
         <span></span>
         <span></span>
         <span></span>
-      </div>
     </div>
   </div>
 </div>
 
 <!-- Navbar -->
-<header>
-  <nav class="navbar">
+  <header>
+  <nav class="navbar" role="navigation" aria-label="Primary">
     <a href="#home" class="logo">CPBC</a>
 
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
@@ -49,7 +56,7 @@
       <li><a href="#certifications">Certifications</a></li>
     </ul>
 
-    <div class="menu-toggle">
+    <div class="menu-toggle" id="mobile-menu-toggle" aria-controls="primary-navigation" aria-expanded="false" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </nav>
@@ -621,6 +628,8 @@
   <div class="footer-bottom">
     <p>© 2025 Cire Paul B. Cruz | Portfolio</p>
   </div>
+
+  <script src="script.js" defer></script>
 </footer>
 
 </body>

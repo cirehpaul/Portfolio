@@ -8,7 +8,7 @@ const content = {
     github: 'https://github.com/cirehpaul'
   },
   heroStats: [
-    { label: 'Experience', value: '5 years' },
+    { label: 'Experience', value: '1 year' },
     { label: 'Projects', value: '5+' },
     { label: 'Certifications', value: '18' },
     { label: 'Technologies', value: 'Kotlin · SQL · React' }
