@@ -10,6 +10,7 @@ import Projects from './components/Sections/Projects'
 import Certifications from './components/Sections/Certifications'
 import Contact from './components/Sections/Contact'
 import Footer from './components/Layout/Footer'
+import Chatbot from './components/Chatbot'
 
 export default function App(){
   return (
@@ -29,6 +30,7 @@ export default function App(){
           <Contact />
           <Footer />
         </div>
+        <Chatbot />
       </main>
     </div>
   )
