@@ -60,24 +60,6 @@ const content = {
   ],
   experience: [
     {
-      section: 'Internship',
-      title: 'Apps Section, Data Management Intern',
-      company: 'Nexus Technologies Inc',
-      location: '1010 Metropolitan Avenue, San Antonio, Makati City 1203',
-      period: 'February 2025 - May 2025',
-      project: 'SQL Server, Data Integration, and Querying Training.',
-      contributions: [
-        'Assisted in managing and configuring SQL Server databases, including installation, indexing, performance tuning, and data querying. Participated in the design, development, and deployment of data integration solutions using Microsoft SSIS (SQL Server Integration Services) within Visual Studio to efficiently move, transform, and analyze data across systems.',
-        'Supported the configuration and administration of SQL Server environments, ensuring optimal setup, secure access, and performance tuning.',
-        'Learned and applied database best practices, including indexing, query optimization, execution planning, and structured SQL for reporting and analytics.',
-        'Developed and optimized SQL queries to retrieve, validate, and manipulate data for business operations and project deliverables.',
-        'Designed and implemented ETL workflows using SSIS in Visual Studio, including data extraction from various sources, transformation logic, and loading into target systems.',
-        'Contributed to SSIS package development, testing, and deployment, helping streamline data migration and integration processes.',
-        'Gained hands-on experience with enterprise-level data tools and actively participated in troubleshooting and resolving SQL and SSIS-related issues.'
-      ],
-      tools: ['SQL Server Management Studio (SSMS)', 'SQL Server Configuration Manager', 'SQL Server Integration Services (SSIS)', 'Visual Studio 2013', 'Microsoft Excel']
-    },
-    {
       section: 'Work',
       title: 'Fulltime - Application Support Analyst I',
       company: 'Equitable Computer Services Inc',
@@ -110,6 +92,24 @@ const content = {
         'Conducted testing, debugging, and performance tuning to maintain high reliability and scalability across diverse Android devices.'
       ],
       tools: ['Kotlin', 'Android Studio', 'Jetpack Compose', 'MVVM (Model-View-ViewModel)', 'Retrofit', 'OkHttp', 'Gson', 'OpenAI API', 'Gemini API']
+    },
+    {
+      section: 'Internship',
+      title: 'Apps Section, Data Management Intern',
+      company: 'Nexus Technologies Inc',
+      location: '1010 Metropolitan Avenue, San Antonio, Makati City 1203',
+      period: 'February 2025 - May 2025',
+      project: 'SQL Server, Data Integration, and Querying Training.',
+      contributions: [
+        'Assisted in managing and configuring SQL Server databases, including installation, indexing, performance tuning, and data querying. Participated in the design, development, and deployment of data integration solutions using Microsoft SSIS (SQL Server Integration Services) within Visual Studio to efficiently move, transform, and analyze data across systems.',
+        'Supported the configuration and administration of SQL Server environments, ensuring optimal setup, secure access, and performance tuning.',
+        'Learned and applied database best practices, including indexing, query optimization, execution planning, and structured SQL for reporting and analytics.',
+        'Developed and optimized SQL queries to retrieve, validate, and manipulate data for business operations and project deliverables.',
+        'Designed and implemented ETL workflows using SSIS in Visual Studio, including data extraction from various sources, transformation logic, and loading into target systems.',
+        'Contributed to SSIS package development, testing, and deployment, helping streamline data migration and integration processes.',
+        'Gained hands-on experience with enterprise-level data tools and actively participated in troubleshooting and resolving SQL and SSIS-related issues.'
+      ],
+      tools: ['SQL Server Management Studio (SSMS)', 'SQL Server Configuration Manager', 'SQL Server Integration Services (SSIS)', 'Visual Studio 2013', 'Microsoft Excel']
     }
   ],
   projects: {
