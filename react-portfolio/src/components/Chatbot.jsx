@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import content from '../data/content';
 
 
-// API key loaded at runtime (not bundled) to avoid GitHub secret scanning
-let GEMINI_API_KEY = '';
-fetch(`${import.meta.env.BASE_URL}config.json`)
+// API key stored as a module-level promise so it resolves before first use
+const configPromise = fetch(`${import.meta.env.BASE_URL}config.json`)
   .then(r => r.json())
-  .then(c => { GEMINI_API_KEY = c.k || ''; console.log('[CireAI] Config loaded, key length:', GEMINI_API_KEY.length); })
-  .catch(() => console.warn('[CireAI] Could not load config.json'));
+  .then(c => c.k || '')
+  .catch(() => '');
+
 
 
 // Simple markdown-like formatter for bot messages
@@ -111,6 +111,15 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
+  const apiKeyRef = useRef('');
+
+  // Resolve API key once on mount
+  useEffect(() => {
+    configPromise.then(key => {
+      apiKeyRef.current = key;
+      console.log('[CireAI] Config ready, key length:', key.length);
+    });
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -121,12 +130,12 @@ export default function Chatbot() {
   }, [messages, isOpen, isLoading]);
 
   const getGeminiResponse = async (userInput, conversationHistory) => {
-    // ── Debug: API key status ──
-    console.log('[CireAI] API Key loaded:', !!GEMINI_API_KEY);
-    console.log('[CireAI] API Key length:', GEMINI_API_KEY ? GEMINI_API_KEY.length : 0);
+    // Always await the config promise — handles race on first message
+    const GEMINI_API_KEY = apiKeyRef.current || await configPromise;
+    console.log('[CireAI] API Key loaded:', !!GEMINI_API_KEY, '| length:', GEMINI_API_KEY.length);
 
     if (!GEMINI_API_KEY || GEMINI_API_KEY.length < 10) {
-      console.error('[CireAI] ❌ API key is missing or too short. Check your .env file for VITE_GEMINI_API_KEY.');
+      console.error('[CireAI] ❌ API key missing. Check public/config.json');
       return '⚠️ The AI assistant is not configured. Please contact Cire directly at **cirepaulcruz21@gmail.com**!';
     }
 
