@@ -119,7 +119,7 @@ export default function Chatbot() {
       const { GoogleGenerativeAI } = await import('@google/generative-ai');
       const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.5-flash',
         systemInstruction: `You are a friendly, knowledgeable AI virtual assistant embedded on the portfolio website of Cire Paul Bernardo Cruz.
 
 CORE CAPABILITIES:
