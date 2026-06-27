@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import content from '../data/content';
 
 // Hardcoded API key for direct frontend usage
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('VITE_GEMINI_API_KEY') || '';
 
 // Simple markdown-like formatter for bot messages
 function formatBotText(text) {
@@ -338,14 +338,19 @@ SPECIFIC INSTRUCTIONS:
                       <button
                         key={idx}
                         onClick={() => {
-                          setInput(q);
-                          // Auto-submit
-                          const fakeEvent = { preventDefault: () => {} };
-                          setInput('');
                           const userMessage = { sender: 'user', text: q };
-                          const currentHistory = [...messages];
                           setMessages(prev => [...prev, userMessage]);
+
+                          if (!GEMINI_API_KEY || GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
+                            setMessages(prev => [
+                              ...prev,
+                              { sender: 'bot', text: '⚠️ The AI assistant is not configured yet. Please contact Cire directly at **cirepaulcruz21@gmail.com** for any questions!' }
+                            ]);
+                            return;
+                          }
+
                           setIsLoading(true);
+                          const currentHistory = [...messages];
                           getGeminiResponse(q, currentHistory).then(replyText => {
                             setMessages(prev => [...prev, { sender: 'bot', text: replyText }]);
                           }).catch(() => {
