@@ -115,6 +115,15 @@ export default function Chatbot() {
   }, [messages, isOpen, isLoading]);
 
   const getGeminiResponse = async (userInput, conversationHistory) => {
+    // ── Debug: API key status ──
+    console.log('[CireAI] API Key loaded:', !!GEMINI_API_KEY);
+    console.log('[CireAI] API Key length:', GEMINI_API_KEY ? GEMINI_API_KEY.length : 0);
+
+    if (!GEMINI_API_KEY || GEMINI_API_KEY.length < 10) {
+      console.error('[CireAI] ❌ API key is missing or too short. Check your .env file for VITE_GEMINI_API_KEY.');
+      return '⚠️ The AI assistant is not configured. Please contact Cire directly at **cirepaulcruz21@gmail.com**!';
+    }
+
     try {
       const recentHistory = conversationHistory.slice(-10);
       
@@ -209,9 +218,14 @@ SPECIFIC INSTRUCTIONS:
         }
       };
 
-      console.log("Sending:", payload);
+      // ── Use the REAL Gemini model ──
+      const MODEL = 'gemini-2.0-flash';
+      const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/antigravity-preview-05-2026:generateContent?key=${GEMINI_API_KEY}`, {
+      console.log('[CireAI] Model:', MODEL);
+      console.log('[CireAI] Sending request with', contents.length, 'messages');
+
+      const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -219,25 +233,33 @@ SPECIFIC INSTRUCTIONS:
         body: JSON.stringify(payload)
       });
 
-      console.log("Status:", response.status);
+      console.log('[CireAI] Response status:', response.status, response.statusText);
 
       const data = await response.json();
-      console.log("Response:", data);
 
       if (!response.ok) {
+        console.error('[CireAI] ❌ API Error:', JSON.stringify(data.error, null, 2));
         throw new Error(data.error?.message || `HTTP error! status: ${response.status}`);
       }
 
-      if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+      console.log('[CireAI] ✅ Response received successfully');
+
+      if (data.candidates && data.candidates[0]?.content?.parts) {
         return data.candidates[0].content.parts[0].text;
+      } else if (data.candidates && data.candidates[0]?.finishReason === 'SAFETY') {
+        console.warn('[CireAI] Response blocked by safety filters');
+        return "I'm sorry, I couldn't generate a response for that question. Please try rephrasing!";
       } else {
+        console.error('[CireAI] ❌ Unexpected response format:', JSON.stringify(data, null, 2));
         throw new Error("Unexpected response format from Gemini API");
       }
     } catch (error) {
-      console.error('Error fetching Gemini response:', error);
+      console.error('[CireAI] ❌ Error:', error.message);
+      console.error('[CireAI] Stack:', error.stack);
       return `⚠️ Error: ${error.message}`;
     }
   };
+
 
   const handleSend = async (e) => {
     e.preventDefault();
