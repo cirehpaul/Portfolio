@@ -116,33 +116,9 @@ export default function Chatbot() {
 
   const getGeminiResponse = async (userInput, conversationHistory) => {
     try {
-      const { GoogleGenerativeAI } = await import('@google/generative-ai');
-      const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({
-        model: 'antigravity-preview-05-2026',
-        systemInstruction: `You are a friendly, knowledgeable AI virtual assistant embedded on the portfolio website of Cire Paul Bernardo Cruz.
-
-CORE CAPABILITIES:
-You can answer ANY question the user asks — whether it's about Cire's portfolio, general knowledge, technology, coding help, career advice, or anything else.
-
-PORTFOLIO CONTEXT:
-When the user asks about Cire, his resume, skills, experience, projects, education, certifications, or contact info, use this data:
-${JSON.stringify(content, null, 2)}
-
-BEHAVIORAL GUIDELINES:
-1. Be warm, conversational, and helpful — like talking to a knowledgeable friend.
-2. For portfolio-related questions, rely on the data provided above. If a specific detail isn't in the data, say so honestly and suggest contacting Cire directly.
-3. For general questions (tech, coding, science, math, history, advice, etc.), answer to the best of your ability with accurate, helpful information.
-4. Keep responses concise and well-structured since you're in a small chat widget. Use bullet points and bold text for clarity.
-5. Use markdown-like formatting: **bold** for emphasis, bullet points with * or -, numbered lists with 1. 2. 3.
-6. Never fabricate information about Cire that isn't in the provided data.
-7. If asked about things you genuinely don't know, be honest about it.
-8. Be proactive — suggest related topics or follow-up questions when appropriate.
-`
-      });
-
-      // Keep last 10 messages for better context
       const recentHistory = conversationHistory.slice(-10);
+      
+      // Convert history to Gemini API format
       const contents = [
         ...recentHistory.map(m => ({
           role: m.sender === 'user' ? 'user' : 'model',
@@ -151,15 +127,54 @@ BEHAVIORAL GUIDELINES:
         { role: 'user', parts: [{ text: userInput }] }
       ];
 
-      const result = await model.generateContent({ contents });
-      const response = await result.response;
-      return response.text();
+      const payload = {
+        contents,
+        systemInstruction: {
+          parts: [{
+            text: `You are a friendly, knowledgeable AI virtual assistant embedded on the portfolio website of Cire Paul Bernardo Cruz.
+
+CORE CAPABILITIES:
+You can answer ANY question the user asks — whether it's about Cire's portfolio, general knowledge, technology, coding help, career advice, or anything else.
+
+PORTFOLIO CONTEXT:
+When the user asks about Cire, his resume, skills, experience, projects, education, certifications, or contact info, use this data:
+${JSON.stringify(content)}
+
+BEHAVIORAL GUIDELINES:
+1. Be open about Cire based on the details. Answer EVERY prompt. Make it happen.
+2. Be warm, conversational, and helpful.
+3. Keep responses concise. Use markdown-like formatting.`
+          }]
+        }
+      };
+
+      console.log("Sending:", payload);
+
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/antigravity-preview-05-2026:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      console.log("Status:", response.status);
+
+      const data = await response.json();
+      console.log("Response:", data);
+
+      if (!response.ok) {
+        throw new Error(data.error?.message || `HTTP error! status: ${response.status}`);
+      }
+
+      if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+        return data.candidates[0].content.parts[0].text;
+      } else {
+        throw new Error("Unexpected response format from Gemini API");
+      }
     } catch (error) {
       console.error('Error fetching Gemini response:', error);
-      if (error.message?.includes('API key')) {
-        return `⚠️ There seems to be an issue with the AI service configuration. Please try again later or contact Cire directly at cirepaulcruz21@gmail.com.`;
-      }
-      return `Sorry, I encountered an error. Please try again in a moment. If the issue persists, feel free to reach out to Cire directly!`;
+      return `⚠️ Error: ${error.message}`;
     }
   };
 
