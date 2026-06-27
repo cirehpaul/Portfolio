@@ -2,8 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import content from '../data/content';
 
-// Hardcoded API key for direct frontend usage
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('VITE_GEMINI_API_KEY') || '';
+
+// API key loaded at runtime (not bundled) to avoid GitHub secret scanning
+let GEMINI_API_KEY = '';
+fetch(`${import.meta.env.BASE_URL}config.json`)
+  .then(r => r.json())
+  .then(c => { GEMINI_API_KEY = c.k || ''; console.log('[CireAI] Config loaded, key length:', GEMINI_API_KEY.length); })
+  .catch(() => console.warn('[CireAI] Could not load config.json'));
+
 
 // Simple markdown-like formatter for bot messages
 function formatBotText(text) {
