@@ -126,32 +126,34 @@ const content = {
     },
     other: [
       {
-        title: 'Delivery App - "Project Based"',
-        description: 'A delivery application developed as a project during college, designed to facilitate efficient order placements and deliveries.',
-        role: 'Android Developer',
-        tools: ['Kotlin', 'Android Studio', 'Room DB', 'XML'],
-        images: ['/Portfolio/img/log (1).png', '/Portfolio/img/log (2).png', '/Portfolio/img/log (3).png', '/Portfolio/img/log (4).png', '/Portfolio/img/log (5).png']
+        title: 'Food POS System',
+        description: 'A modern Point-of-Sale system built for food service businesses. Features an intuitive dashboard for order management, menu configuration, sales analytics, and real-time transaction tracking — designed for speed and efficiency in fast-paced restaurant environments.',
+        role: 'Full Stack Developer',
+        tools: ['React', 'Vite', 'JavaScript', 'CSS'],
+        liveUrl: 'https://foodpos-system.vercel.app',
+        images: []
       },
       {
-        title: 'Cognitive Development Game - "Commission Based"',
-        description: 'A cognitive development game system created during college, developed for a student from NU who requested a complete system build.',
-        role: 'Lead Programmer',
-        tools: ['HTML', 'CSS', 'JavaScript', 'PHP'],
-        images: ['/Portfolio/img/main.png', '/Portfolio/img/main1.png', '/Portfolio/img/main2.png', '/Portfolio/img/main3.png', '/Portfolio/img/main4.png', '/Portfolio/img/main5.png', '/Portfolio/img/main6.png']
-      },
-      {
-        title: 'Location Finder',
-        description: 'The User Location Tracker is a web-based application that allows users to securely share their real-time geographic location. Users provide their Gmail address for identification purposes and grant permission for the browser to access their device’s GPS. Upon approval, the application captures the user’s exact latitude and longitude and displays it on an interactive map powered by Leaflet and OpenStreetMap, ensuring a fast, reliable, and free mapping solution without requiring any API key.',
-        role: 'Web Developer',
-        tools: ['HTML5', 'CSS3 / Bootstrap', 'JavaScript', 'Google Maps Embed API', 'Browser Geolocation API', 'Google Geocoding API'],
-        images: ['/Portfolio/img/location.png']
+        title: 'TIMELESS — Premium Clothing',
+        description: 'A premium e-commerce storefront for a clothing brand, featuring product catalogs, collections showcase, cart functionality, and a polished shopping experience. Built with modern web technologies and optimized for performance and SEO across the Philippines market.',
+        role: 'Front-End Developer',
+        tools: ['React', 'Vite', 'Framer Motion', 'TanStack Query', 'Recharts'],
+        liveUrl: 'https://timeless-selection.vercel.app',
+        images: []
       }
     ]
   },
   certifications: [
+    { date: 'AUG 2026', title: 'BigQuery and Data Studio Training Workshop' },
+    { date: 'OCT 2025', title: 'EU AI Act - Fundamentals of Laws on Artificial Intelligence' },
+    { date: 'OCT 2025', title: 'Blockchain as a Service Using AWS' },
+    { date: 'OCT 2025', title: 'Machine Learning in Python Environment' },
+    { date: 'NOV 2025', title: 'SQL Server for Data Analysis' },
+    { date: 'NOV 2025', title: 'Fundamental Data Analysis using Power BI' },
+    { date: 'NOV 2025', title: 'Leveraging AI in Predictive Analytics, Automation, and Data Management' },
     { date: 'APRIL 2025', title: '2nd Regional Research Conference – Laguna University', detail: 'Theme: "Resilience Through Innovation: Navigating the Future in Education, Entrepreneurship, Engineering, and Digital Technology" - Certificate of Participation: Lead Programmer and Presenter' },
-    { date: 'MAY 2022', title: 'Unlocked: Password @ Authentication' },
-    { date: 'MAY 2023', title: 'T.R.U.S.T: Tackling Risks and Understanding Security in AI Technology' },
+    { date: 'MAR 2025', title: 'DATABASE – DML Statements and SQL Server Administration' },
+    { date: 'MAR 2025', title: 'SQL SERVER 2014: Security Fundamentals' },
     { date: 'MAY 2024', title: 'The cutting edge: Trends Shaping the Future of Computing' },
     { date: 'MAY 2024', title: 'DICT-WD001: Principles of Web Development and Introduction to HTML' },
     { date: 'MAY 2024', title: 'DICT-ICT018: Basic Level of Software Engineering' },
@@ -159,25 +161,18 @@ const content = {
     { date: 'MAY 2024', title: 'DICT-WD002: Using HTML and CSS to Design a Website' },
     { date: 'MAY 2024', title: 'DICT-MAD007: Basic Building Blocks of the User Interface' },
     { date: 'MAY 2024', title: 'DICT-MAD008: Android Fragments' },
-    { date: 'MAR 2025', title: 'DATABASE – DML Statements and SQL Server Administration' },
-    { date: 'MAR 2025', title: 'SQL SERVER 2014: Security Fundamentals' },
-    { date: 'OCT 2025', title: 'EU AI Act - Fundamentals of Laws on Artificial Intelligence' },
-    { date: 'OCT 2025', title: 'Blockchain as a Service Using AWS' },
-    { date: 'OCT 2025', title: 'Machine Learning in Python Environment' },
-    { date: 'NOV 2025', title: 'SQL Server for Data Analysis' },
-    { date: 'NOV 2025', title: 'Fundamental Data Analysis using Power BI' },
-    { date: 'NOV 2025', title: 'Leveraging AI in Predictive Analytics, Automation, and Data Management' }
+    { date: 'MAY 2023', title: 'T.R.U.S.T: Tackling Risks and Understanding Security in AI Technology' },
+    { date: 'MAY 2022', title: 'Unlocked: Password @ Authentication' }
   ],
   contact: {
-    email: 'mailto:cirepaulcruz21@gmail.com',
-    whatsapp: 'https://wa.me/639943598620',
-    linkedin: 'https://www.linkedin.com/in/cirepaulcruz/',
-    github: 'https://github.com/cirehpaul',
-    facebook: 'https://www.facebook.com/cirepaulcruz21/'
+    email: 'cirepaulcruz21@gmail.com',
+    whatsapp: '+63 994 359 8620',
+    Viber: '+63 994 359 8620',
+    Phone: '+63 994 359 8620',
+    linkedin: 'cirepaulcruz',
+    github: 'cirehpaul'
   },
   footer: {
-    title: 'Get in Touch',
-    subtitle: 'Have a project or idea? Let\'s connect!',
     copyright: '© 2025 Cire Paul B. Cruz | Portfolio'
   }
 }

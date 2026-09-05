@@ -12,7 +12,7 @@ import Contact from './components/Sections/Contact'
 import Footer from './components/Layout/Footer'
 import Chatbot from './components/Chatbot'
 
-export default function App(){
+export default function App() {
   return (
     <div className="min-h-screen bg-[#05060a] text-white overflow-x-hidden">
       <Preloader />

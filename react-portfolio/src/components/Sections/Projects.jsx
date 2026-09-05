@@ -63,14 +63,23 @@ export default function Projects(){
                   <span key={tool} className="rounded-full bg-white/5 px-3 py-1 text-sm text-gray-100">{tool}</span>
                 ))}
               </div>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {project.images.map((src) => (
-                  <img key={src} src={src} alt={`${project.title} screenshot`} className="w-full rounded-3xl border border-white/10 object-cover h-44" />
-                ))}
-              </div>
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-cyan/10 border border-cyan/30 px-5 py-2.5 text-sm font-semibold text-cyan transition-all duration-300 hover:bg-cyan/20 hover:border-cyan/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.15)]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Live Demo
+                </a>
+              )}
+              {project.images && project.images.length > 0 && (
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {project.images.map((src) => (
+                    <img key={src} src={src} alt={`${project.title} screenshot`} className="w-full rounded-3xl border border-white/10 object-cover h-44" />
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   )
