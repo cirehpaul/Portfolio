@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" className="group flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 border border-accent/20 text-accent font-bold text-sm transition-all duration-300 group-hover:bg-accent/20 group-hover:shadow-[0_0_12px_rgba(34,197,94,0.2)]">
-            C
+            CP
           </span>
           <span className="text-sm font-semibold tracking-wide text-white/90">Cire Paul</span>
         </a>
