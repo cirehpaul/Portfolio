@@ -45,7 +45,7 @@ export default function Skills() {
       {activeTab === 'technical' && (
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {skills.categories.map((cat, index) => (
-            <div key={cat.name} className="fade-up" style={{ transitionDelay: `${index * 50}ms` }}>
+            <div key={cat.name} style={{ animationDelay: `${index * 50}ms` }}>
               <div className="glass-card p-5 h-full group hover:border-accent/15 transition-all duration-500">
                 {/* Category icon & name */}
                 <div className="flex items-center gap-2.5 mb-4">
@@ -69,7 +69,7 @@ export default function Skills() {
 
       {/* Professional Skills */}
       {activeTab === 'professional' && (
-        <div className="mt-8 fade-up">
+        <div className="mt-8">
           <div className="glass-card p-6 sm:p-8">
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {skills.professional.map((skill) => (
